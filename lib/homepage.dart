@@ -33,48 +33,55 @@ class _HomepageState extends State<Homepage> {
         centerTitle: true,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.max,
         children: [
-          SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      pCard(),
-                      pCard(),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      pCard(),
-                      pCard(),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      pCard(),
-                      pCard(),
-                    ],
-                  ),
-                ],
-              )),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
-            child: SizedBox(
-              width: scrnWth / 1.5,
-              height: 50.0,
+          Expanded(
+            flex: 6,
+            child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        pCard(),
+                        pCard(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        pCard(),
+                        pCard(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        pCard(),
+                        pCard(),
+                      ],
+                    ),
+                  ],
+                )),
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 15.0, horizontal: 50.0),
               child: ElevatedButton(
-                child: Text(
+                child: const Text(
                   "Add note",
                   style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 35.0,
+                    letterSpacing: 0.5,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(clr.clrTeal),
-                  elevation: MaterialStateProperty.all<double>(5.0),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)),
+                  primary: clr.clrTeal,
+                  elevation: 5.0,
                 ),
                 onPressed: () {},
               ),
