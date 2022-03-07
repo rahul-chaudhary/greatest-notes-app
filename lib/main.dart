@@ -10,6 +10,10 @@ class Notes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: "Home",
+      routes: {
+        "Home": (context) => const Homepage(),
+      },
       home: const Homepage(),
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(
